@@ -1,0 +1,45 @@
+{
+  "name": "performance-optimized-app",
+  "version": "1.0.0",
+  "description": "A sample web application demonstrating performance optimization best practices",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "build:analyze": "npm run build && npx webpack-bundle-analyzer dist/static/js/*.js",
+    "test": "jest",
+    "lighthouse": "lighthouse http://localhost:3000 --output html --output-path ./reports/lighthouse.html",
+    "perf:audit": "npm run build && npm run lighthouse"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "react-window": "^1.8.8",
+    "intersection-observer": "^0.12.2",
+    "web-vitals": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.7.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.0",
+    "webpack-bundle-analyzer": "^4.7.0",
+    "compression-webpack-plugin": "^10.0.0",
+    "terser-webpack-plugin": "^5.3.0",
+    "css-minimizer-webpack-plugin": "^4.2.0",
+    "workbox-webpack-plugin": "^6.5.0",
+    "lighthouse": "^9.6.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
